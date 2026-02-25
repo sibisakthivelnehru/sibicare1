@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 180 20% 97%;
+    --foreground: 210 20% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 12%;
+
+    --primary: 174 62% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 174 30% 92%;
+    --secondary-foreground: 174 62% 30%;
+
+    --muted: 210 15% 93%;
+    --muted-foreground: 210 10% 50%;
+
+    --accent: 35 90% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 90%;
+    --input: 210 15% 90%;
+    --ring: 174 62% 40%;
+
+    --radius: 1rem;
+
+    /* Custom app colors */
+    --tablet: 174 62% 40%;
+    --tablet-light: 174 40% 92%;
+    --food: 35 90% 55%;
+    --food-light: 35 60% 92%;
+    --water: 210 80% 55%;
+    --water-light: 210 50% 92%;
+    --morning: 45 95% 55%;
+    --morning-light: 45 70% 92%;
+    --night: 250 50% 50%;
+    --night-light: 250 35% 92%;
+    --alarm: 0 72% 55%;
+    --alarm-light: 0 50% 92%;
+    --settings: 210 10% 50%;
+    --settings-light: 210 10% 93%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  /* Hide scrollbar for mobile feel */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .card-shadow {
+    box-shadow: 0 2px 12px -2px hsl(var(--foreground) / 0.08);
+  }
+  .card-shadow-lg {
+    box-shadow: 0 8px 30px -6px hsl(var(--foreground) / 0.12);
+  }
+  .safe-bottom {
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
