@@ -17,9 +17,9 @@ export default defineConfig(({ mode }) => ({
     mode === "development" && componentTagger(),
     VitePWA({
       registerType: "autoUpdate",
-      injectRegister: "auto",   // 🔥 THIS IS IMPORTANT
+      injectRegister: "auto",
       devOptions: {
-        enabled: true
+        enabled: true,
       },
       manifest: {
         name: "SScare",
@@ -30,9 +30,14 @@ export default defineConfig(({ mode }) => ({
         theme_color: "#0f766e",
         icons: [
           {
-            src: "/favicon.ico",
-            sizes: "64x64",
-            type: "image/x-icon",
+            src: "/icon-192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: "/icon-512.png",
+            sizes: "512x512",
+            type: "image/png",
           },
         ],
       },
