@@ -21,11 +21,15 @@ export default defineConfig(({ mode }) => ({
       devOptions: {
         enabled: true,
       },
+      includeAssets: ["favicon.ico"],
       manifest: {
         name: "SScare",
         short_name: "SScare",
+        description: "SScare Safety and Family Care Application",
         start_url: "/",
+        scope: "/",
         display: "standalone",
+        orientation: "portrait",
         background_color: "#ffffff",
         theme_color: "#0f766e",
         icons: [
@@ -33,15 +37,17 @@ export default defineConfig(({ mode }) => ({
             src: "/icon-192.png",
             sizes: "192x192",
             type: "image/png",
+            purpose: "any"
           },
           {
             src: "/icon-512.png",
             sizes: "512x512",
             type: "image/png",
-          },
-        ],
-      },
-    }),
+            purpose: "any"
+          }
+        ]
+      }
+    })
   ].filter(Boolean),
   resolve: {
     alias: {
