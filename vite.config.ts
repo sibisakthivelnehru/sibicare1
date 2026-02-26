@@ -17,6 +17,10 @@ export default defineConfig(({ mode }) => ({
     mode === "development" && componentTagger(),
     VitePWA({
       registerType: "autoUpdate",
+      injectRegister: "auto",   // 🔥 THIS IS IMPORTANT
+      devOptions: {
+        enabled: true
+      },
       manifest: {
         name: "SScare",
         short_name: "SScare",
